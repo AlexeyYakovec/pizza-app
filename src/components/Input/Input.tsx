@@ -11,7 +11,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 ) {
    return (
       <input
-         placeholder="Email..."
          {...props}
          ref={ref}
          className={cn(styles["input"], className, {
