@@ -1,10 +1,13 @@
 import "./App.css";
 import Button from "./components/Button/Button";
+import Input from "./components/Input/Input";
 
 function App() {
    return (
       <>
-         <Button>Button</Button>
+         <Button>Кнопка</Button>
+         <Button appearence="big">Кнопка</Button>
+         <Input placeholder="Email..." />
       </>
    );
 }
