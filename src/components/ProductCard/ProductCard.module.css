@@ -1,0 +1,95 @@
+.card {
+   background-color: white;
+   border-radius: 19px;
+   box-shadow: 10px 6px 36px -12px rgba(58, 61, 65, 0.25);
+   width: 320px;
+}
+
+.card-head {
+   position: relative;
+   min-height: 165px;
+   background-size: 100% 100%;
+   border-radius: 19px;
+}
+
+.head-price {
+   position: absolute;
+   top: 15px;
+   left: 18px;
+   background-color: var(--white-color);
+   width: 76px;
+   height: 35px;
+   border-radius: 20px;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.currency {
+   color: var(--primary-color-hover);
+}
+.head-add-to-cart {
+   position: absolute;
+   top: 15px;
+   right: 18px;
+   padding: 0;
+   height: 35px;
+   width: 35px;
+   border-radius: 50%;
+   background-color: var(--primary-color);
+   transition: 0.25s ease-in-out;
+}
+.head-add-to-cart:hover {
+   background-color: var(--primary-color-hover);
+   border: 1px solid transparent;
+}
+.head-add-to-cart-svg {
+   fill: var(--separator);
+   font-size: 18px;
+}
+.head-rating {
+   position: absolute;
+   bottom: -15px;
+   left: 30px;
+   background-color: var(--white-color);
+   padding: 4px 8px;
+   border-radius: 12px;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   box-shadow: 10px 6px 80px 10px rgba(58, 61, 65, 0.8);
+   font-weight: 600;
+}
+.head-rating svg {
+   fill: var(--primary-color-hover);
+   font-size: 18px;
+}
+
+/* card-footer */
+
+.card-footer {
+   padding: 12px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 0 0 19px 0;
+   gap: 12px;
+}
+.footer-title {
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-top: 16px;
+}
+.footer-description {
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   color: var(--separator);
+   margin-top: 8px;
+   margin-bottom: 12px;
+}

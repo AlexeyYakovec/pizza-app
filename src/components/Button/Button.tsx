@@ -6,7 +6,7 @@ import { ButtonProps } from "./Button.props";
 const Button = ({
    children,
    className,
-   appearence = "small",
+   appearance = "small",
    ...props
 }: ButtonProps) => {
    return (
@@ -15,8 +15,8 @@ const Button = ({
             styles["button"],
             styles["accent"],
             className,
-            { [styles["small"]]: appearence === "small" },
-            { [styles["big"]]: appearence === "big" }
+            { [styles["small"]]: appearance === "small" },
+            { [styles["big"]]: appearance === "big" }
          )}
          {...props}
       >
