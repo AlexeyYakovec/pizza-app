@@ -1,5 +1,5 @@
 import styles from "./ProductCard.module.css";
-import cn from "classnames";
+// import cn from "classnames";
 
 import { ProductCardProps } from "./ProductCard.props";
 
@@ -7,17 +7,15 @@ import { FaOpencart } from "react-icons/fa6";
 import { IoMdStar } from "react-icons/io";
 import { BiRuble } from "react-icons/bi";
 
-import pizza from "../../assets/img/pizza.jpg";
 import { Link } from "react-router-dom";
 
 function ProductCard(props: ProductCardProps) {
    return (
-      <Link to={""}>
+      <Link to={`/product/${props.id}`} className={styles["link"]}>
          <div className={styles["card"]}>
             <div
                className={styles["card-head"]}
-               // style={{ backgroundImage: `url(${props.image})` }}
-               style={{ backgroundImage: `url(${pizza})` }}
+               style={{ backgroundImage: `url(${props.image})` }}
             >
                <span className={styles["head-price"]}>
                   {props.price}
