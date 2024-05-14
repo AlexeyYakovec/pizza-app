@@ -1,7 +1,9 @@
+import Headling from "../../components/Headling/Headling";
+
 const Cart = () => {
    return (
       <>
-         <div>Cart</div>
+         <Headling>Cart</Headling>
       </>
    );
 };

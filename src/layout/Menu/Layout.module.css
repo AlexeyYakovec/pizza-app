@@ -50,13 +50,16 @@
    transition: 0.15s ease-in;
 }
 .link:hover {
-   color: var(--placeholder);
+   color: var(--primary-color-hover);
 }
 .link-svg {
    font-size: 22px;
 }
+.active {
+   color: var(--primary-color-hover);
+}
 
-.outlet {
+.content {
    padding: 2rem;
    flex: 1;
 }

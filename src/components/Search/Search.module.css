@@ -1,0 +1,37 @@
+.input-wrapper {
+   position: relative;
+}
+
+.input {
+   width: 230px;
+   padding: 8px 20px 8px 36px;
+   font-size: 14px;
+   font-weight: 400;
+   font-style: normal;
+
+   border-radius: 8px;
+   border: 1px solid var(--placeholder);
+
+   background-color: transparent;
+   color: var(--black-color);
+   box-shadow: 10px 6px 36px -12px rgba(58, 61, 65, 0.25);
+
+   transition: 0.25s ease-in;
+}
+
+.input::placeholder {
+   color: var(--placeholder);
+}
+
+.input:focus {
+   outline: none;
+   box-shadow: 10px 6px 36px -12px rgba(219, 170, 85, 1);
+   border: 1px solid var(--primary-color-hover);
+}
+
+.input-svg {
+   position: absolute;
+   top: 10px;
+   left: 12px;
+   color: var(--placeholder);
+}

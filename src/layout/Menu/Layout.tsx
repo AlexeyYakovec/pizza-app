@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 import styles from "./Layout.module.css";
 
@@ -9,6 +9,8 @@ import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { MdMotionPhotosOff } from "react-icons/md";
 
 import photo from "../../assets/img/avatar.avif";
+
+import cn from "classnames";
 
 const Layout = () => {
    return (
@@ -21,21 +23,35 @@ const Layout = () => {
             </div>
 
             <div className={styles["menu"]}>
-               <Link to="/" className={styles["link"]}>
+               <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                     cn(styles["link"], {
+                        [styles.active]: isActive,
+                     })
+                  }
+               >
                   <RxHamburgerMenu className={styles["link-svg"]} />
                   Меню
-               </Link>
-               <Link to="/cart" className={styles["link"]}>
+               </NavLink>
+               <NavLink
+                  to="/cart"
+                  className={({ isActive }) =>
+                     cn(styles["link"], {
+                        [styles.active]: isActive,
+                     })
+                  }
+               >
                   <PiShoppingCartSimpleFill className={styles["link-svg"]} />
                   Корзина
-               </Link>
+               </NavLink>
             </div>
             <Button className={styles["button-layout"]}>
                <MdMotionPhotosOff className={styles["link-svg"]} />
                <span>Выйти</span>
             </Button>
          </div>
-         <div className={styles["outlet"]}>
+         <div className={styles["content"]}>
             <Outlet />
          </div>
       </div>
