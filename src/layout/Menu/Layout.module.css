@@ -1,0 +1,70 @@
+.layout {
+   display: flex;
+   max-width: 1280px;
+   margin: 0 auto;
+   min-height: 100vh;
+   color: var(--text);
+}
+
+.layout_sidebar {
+   display: flex;
+   flex-direction: column;
+   width: 20%;
+   border-right: 1px solid var(--placeholder);
+   padding: 2rem;
+}
+
+.user {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 6px;
+   margin-bottom: 38px;
+}
+.user_photo {
+   height: 160px;
+   width: 160px;
+   border-radius: 50%;
+   border: 1px solid var(--placeholder);
+   box-shadow: 10px 10px 80px 0px rgba(58, 61, 65, 0.25);
+}
+.user_name {
+   font-size: 20px;
+}
+.user_email {
+   color: var(--placeholder);
+   font-size: 14px;
+}
+
+.menu {
+   display: flex;
+   flex-direction: column;
+   gap: 28px;
+}
+
+.link {
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   gap: 12px;
+   transition: 0.15s ease-in;
+}
+.link:hover {
+   color: var(--placeholder);
+}
+.link-svg {
+   font-size: 22px;
+}
+
+.outlet {
+   padding: 2rem;
+   flex: 1;
+}
+
+.button-layout {
+   margin-top: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 9px;
+}
