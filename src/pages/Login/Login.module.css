@@ -14,6 +14,7 @@
    align-items: center;
    margin-bottom: 24px;
    width: 100%;
+   position: relative;
 }
 .form-field {
    display: flex;
@@ -52,4 +53,11 @@
 
 .links span {
    margin-bottom: 6px;
+}
+
+.error {
+   color: red;
+   position: absolute;
+   bottom: 75px;
+   font-weight: 600;
 }
