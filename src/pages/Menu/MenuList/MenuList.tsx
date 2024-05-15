@@ -11,7 +11,7 @@ export function MenuList({ products }: MenuListProps) {
                key={p.id}
                id={p.id}
                description={p.ingredients.join(", ")}
-               title={p.name}
+               name={p.name}
                rating={p.rating}
                price={p.price}
                image={p.image}
