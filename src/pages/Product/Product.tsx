@@ -1,12 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Await } from "react-router-dom";
 import Headling from "../../components/Headling/Headling";
 import { Product } from "../../interfaces/product.interface";
+import { Suspense } from "react";
 
 export function Product() {
-   const data = useLoaderData() as Product;
+   const data = useLoaderData() as { data: Product };
    return (
       <>
-         <Headling>Product: {data.name}</Headling>
+         <Suspense fallback={"Загрузка..."}>
+            <Await
+               //    errorElement можно еще указывать в компоненте Await
+               //    errorElement={"...Ошибка получения данных"}
+               resolve={data.data}
+            >
+               {({ data }: { data: Product }) => <>Product - {data.name}</>}
+            </Await>
+         </Suspense>
       </>
    );
 }

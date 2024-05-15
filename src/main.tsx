@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, defer, RouterProvider } from "react-router-dom";
 
 // import Menu from "./pages/Menu/Menu";
 import Cart from "./pages/Cart/Cart";
@@ -32,17 +32,32 @@ const router = createBrowserRouter([
          {
             path: "/product/:id",
             element: <Product />,
-            errorElement: <>Error</>,
+            errorElement: <>Ошибка получения данных</>,
             loader: async ({ params }) => {
-               await new Promise<void>((resolve) => {
-                  setTimeout(() => {
-                     resolve();
-                  }, 2000);
+               return defer({
+                  data: new Promise((resolve, reject) => {
+                     setTimeout(() => {
+                        axios
+                           .get(`${PREFIX}/products/${params.id}`)
+                           .then((data) => resolve(data))
+                           .catch((e) => reject(e));
+                     }, 1000);
+                  }),
                });
-               const { data } = await axios.get(
-                  `${PREFIX}/productss/${params.id}`
-               );
-               return data;
+               //    return defer({
+               //       data: axios
+               //          .get(`${PREFIX}/products/${params.id}`)
+               //          .then((data) => data),
+               //    });
+               //    await new Promise<void>((resolve) => {
+               //       setTimeout(() => {
+               //          resolve();
+               //       }, 2000);
+               //    });
+               //    const { data } = await axios.get(
+               //       `${PREFIX}/products/${params.id}`
+               //    );
+               //    return data;
             },
          },
       ],
