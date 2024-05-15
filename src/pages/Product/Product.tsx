@@ -13,7 +13,9 @@ export function Product() {
                //    errorElement={"...Ошибка получения данных"}
                resolve={data.data}
             >
-               {({ data }: { data: Product }) => <>Product - {data.name}</>}
+               {({ data }: { data: Product }) => (
+                  <Headling>Product - {data.name}</Headling>
+               )}
             </Await>
          </Suspense>
       </>

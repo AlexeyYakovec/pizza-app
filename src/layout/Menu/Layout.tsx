@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 import { MdMotionPhotosOff } from "react-icons/md";
 
-import photo from "../../assets/img/avatar.avif";
+import photo from "../../../public/avatar.avif";
 
 import cn from "classnames";
 
