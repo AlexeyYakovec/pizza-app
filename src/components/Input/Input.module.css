@@ -22,6 +22,6 @@
 
 .input:focus {
    outline: none;
-   box-shadow: 10px 10px 80px 0px rgba(42, 134, 255, 0.25);
-   border: 1px solid #2a86ff;
+   box-shadow: 10px 10px 80px 0px rgba(219, 170, 85, 0.5);
+   border: 1px solid var(--primary-color);
 }

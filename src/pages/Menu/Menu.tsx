@@ -7,6 +7,8 @@ import Search from "../../components/Search/Search";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { PREFIX } from "../../helpers/API";
 import { Product } from "../../interfaces/product.interface";
+import { error } from "console";
+import axios from "axios";
 
 const Menu = () => {
    const [products, setProducts] = useState<Product[]>([]);
@@ -14,11 +16,7 @@ const Menu = () => {
 
    const getMenu = async () => {
       try {
-         const res = await fetch(`${PREFIX}/products`);
-         if (!res.ok) {
-            return;
-         }
-         const data = (await res.json()) as Product[];
+         const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
          setProducts(data);
       } catch (e) {
          console.error(e);
