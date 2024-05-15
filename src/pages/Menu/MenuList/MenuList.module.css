@@ -1,0 +1,13 @@
+/* .products-grid {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   row-gap: 30px;
+} */
+.products-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   gap: 40px;
+   place-self: center;
+}

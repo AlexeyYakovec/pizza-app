@@ -2,7 +2,8 @@
    background-color: white;
    border-radius: 19px;
    box-shadow: 10px 6px 36px -12px rgba(58, 61, 65, 0.25);
-   width: 320px;
+   max-width: 330px;
+   width: 100%;
    transition: 0.25s ease-in;
 }
 .card:hover {

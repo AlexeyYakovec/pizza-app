@@ -1,13 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Headling from "../../components/Headling/Headling";
+import { Product } from "../../interfaces/product.interface";
 
-function Product() {
-   const { id } = useParams();
+export function Product() {
+   const data = useLoaderData() as Product;
    return (
       <>
-         <Headling>Product: {id}</Headling>
+         <Headling>Product: {data.name}</Headling>
       </>
    );
 }
-
-export default Product;
