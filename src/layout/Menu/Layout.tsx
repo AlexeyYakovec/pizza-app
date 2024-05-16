@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 import styles from "./Layout.module.css";
 
@@ -13,6 +13,12 @@ import photo from "../../../public/avatar.avif";
 import cn from "classnames";
 
 const Layout = () => {
+   const navigate = useNavigate();
+   const logout = () => {
+      localStorage.removeItem("jwt");
+      navigate("/auth/login");
+   };
+
    return (
       <div className={styles["layout"]}>
          <div className={styles["layout_sidebar"]}>
@@ -46,7 +52,7 @@ const Layout = () => {
                   Корзина
                </NavLink>
             </div>
-            <Button className={styles["button-layout"]}>
+            <Button className={styles["button-layout"]} onClick={logout}>
                <MdMotionPhotosOff className={styles["link-svg"]} />
                <span>Выйти</span>
             </Button>
