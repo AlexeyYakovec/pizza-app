@@ -11,11 +11,16 @@ import { MdMotionPhotosOff } from "react-icons/md";
 import photo from "../../../public/avatar.avif";
 
 import cn from "classnames";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { userActions } from "../../store/user.slice";
 
 const Layout = () => {
    const navigate = useNavigate();
+   const dispatch = useDispatch<AppDispatch>();
+
    const logout = () => {
-      localStorage.removeItem("jwt");
+      dispatch(userActions.logout());
       navigate("/auth/login");
    };
 
