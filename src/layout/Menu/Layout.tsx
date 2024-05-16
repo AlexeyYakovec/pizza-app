@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 import styles from "./Layout.module.css";
+import cn from "classnames";
 
 import Button from "../../components/Button/Button";
 
@@ -10,11 +12,9 @@ import { MdMotionPhotosOff } from "react-icons/md";
 
 import photo from "../../../public/avatar.avif";
 
-import cn from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import { getProfile, userActions } from "../../store/user.slice";
-import { useEffect } from "react";
 
 const Layout = () => {
    const navigate = useNavigate();
