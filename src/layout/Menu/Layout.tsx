@@ -11,13 +11,19 @@ import { MdMotionPhotosOff } from "react-icons/md";
 import photo from "../../../public/avatar.avif";
 
 import cn from "classnames";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../store/store";
-import { userActions } from "../../store/user.slice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
+import { getProfile, userActions } from "../../store/user.slice";
+import { useEffect } from "react";
 
 const Layout = () => {
    const navigate = useNavigate();
    const dispatch = useDispatch<AppDispatch>();
+   const profile = useSelector((s: RootState) => s.user.profile);
+
+   useEffect(() => {
+      dispatch(getProfile());
+   }, [dispatch]);
 
    const logout = () => {
       dispatch(userActions.logout());
@@ -29,8 +35,8 @@ const Layout = () => {
          <div className={styles["layout_sidebar"]}>
             <div className={styles["user"]}>
                <img src={photo} alt="" className={styles["user_photo"]} />
-               <h3 className={styles["user_name"]}>Ярослав Журавлев</h3>
-               <h3 className={styles["user_email"]}>yakovec2222@gmail.com</h3>
+               <h3 className={styles["user_name"]}>{profile?.name}</h3>
+               <h3 className={styles["user_email"]}>{profile?.email}</h3>
             </div>
 
             <div className={styles["menu"]}>
