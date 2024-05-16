@@ -13,6 +13,9 @@ import Button from "../../components/Button/Button";
 import Headling from "../../components/Headling/Headling";
 import Input from "../../components/Input/Input";
 import { LoginResponse } from "../../interfaces/auth.interface";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { userActions } from "../../store/user.slice";
 
 export type LoginForm = {
    email: {
@@ -26,6 +29,7 @@ export type LoginForm = {
 export function Login() {
    const [error, setError] = useState<string | null>();
    const navigate = useNavigate();
+   const dispatch = useDispatch<AppDispatch>();
 
    const submit = async (e: FormEvent) => {
       e.preventDefault();
@@ -44,8 +48,7 @@ export function Login() {
                password,
             }
          );
-         console.log(data);
-         localStorage.setItem("jwt", data.access_token);
+         dispatch(userActions.addJwt(data.access_token));
          navigate("/");
       } catch (e) {
          if (e instanceof AxiosError) {
