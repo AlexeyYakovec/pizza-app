@@ -20,6 +20,7 @@ const Layout = () => {
    const navigate = useNavigate();
    const dispatch = useDispatch<AppDispatch>();
    const profile = useSelector((s: RootState) => s.user.profile);
+   const items = useSelector((s: RootState) => s.cart.items);
 
    useEffect(() => {
       dispatch(getProfile());
@@ -60,7 +61,12 @@ const Layout = () => {
                   }
                >
                   <PiShoppingCartSimpleFill className={styles["link-svg"]} />
-                  Корзина
+                  <span>
+                     Корзина:{" "}
+                     {items.reduce((acc, item) => {
+                        return (acc = acc + item.count);
+                     }, 0)}
+                  </span>
                </NavLink>
             </div>
             <Button className={styles["button-layout"]} onClick={logout}>
