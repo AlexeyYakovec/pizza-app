@@ -16,4 +16,8 @@ store.subscribe(() => {
 });
 
 export type RootState = ReturnType<typeof store.getState>;
+console.log(`store.getState: `, store.getState());
+
 export type AppDispatch = typeof store.dispatch;
+
+export default store;

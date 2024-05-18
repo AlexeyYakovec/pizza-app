@@ -1,0 +1,86 @@
+.cart {
+   display: flex;
+   margin-bottom: 28px;
+}
+
+.cart-section-desc {
+   display: flex;
+}
+
+.image {
+   width: 80px;
+   height: 80px;
+   margin-right: 16px;
+   background-size: cover;
+   border-radius: 16px;
+}
+
+.cart-description {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 260px;
+}
+.title {
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+}
+.price {
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   color: var(--separator);
+   margin-top: 8px;
+   margin-bottom: 12px;
+   display: flex;
+   align-items: center;
+}
+.cart-currency {
+   font-size: 18px;
+   fill: var(--primary-color-hover);
+}
+
+.cart-section-buttons {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 16px;
+}
+
+.cart-button_svg {
+   font-size: 28px;
+   transition: 0.25s ease-in;
+}
+.remove {
+   fill: var(--placeholder);
+}
+
+.add {
+   fill: var(--primary-color);
+}
+.close {
+   fill: var(--primary-color);
+}
+.remove:hover {
+   fill: var(--text);
+}
+.add:hover {
+   fill: var(--primary-color-hover);
+}
+.close:hover {
+   fill: var(--primary-color-hover);
+}
+.count {
+}
+
+.cart-button {
+   background: none;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   outline: none;
+   border: none;
+}
