@@ -13,12 +13,12 @@ import { MdMotionPhotosOff } from "react-icons/md";
 import photo from "../../../public/avatar.avif";
 
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store/store";
+import { AppDispath, RootState } from "../../store/store";
 import { getProfile, userActions } from "../../store/user.slice";
 
 const Layout = () => {
    const navigate = useNavigate();
-   const dispatch = useDispatch<AppDispatch>();
+   const dispatch = useDispatch<AppDispath>();
    const profile = useSelector((s: RootState) => s.user.profile);
    const items = useSelector((s: RootState) => s.cart.items);
 

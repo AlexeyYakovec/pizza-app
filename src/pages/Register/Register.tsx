@@ -11,7 +11,7 @@ import Input from "../../components/Input/Input";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { AppDispatch, RootState } from "../../store/store";
+import { AppDispath, RootState } from "../../store/store";
 import { register, userActions } from "../../store/user.slice";
 
 export type RegisterForm = {
@@ -28,7 +28,7 @@ export type RegisterForm = {
 
 export function Register() {
    const navigate = useNavigate();
-   const dispatch = useDispatch<AppDispatch>();
+   const dispatch = useDispatch<AppDispath>();
    const { jwt, registerErrorMessage } = useSelector((s: RootState) => s.user);
 
    useEffect(() => {

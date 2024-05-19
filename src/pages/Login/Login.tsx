@@ -9,7 +9,7 @@ import Button from "../../components/Button/Button";
 import Headling from "../../components/Headling/Headling";
 import Input from "../../components/Input/Input";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store/store";
+import { AppDispath, RootState } from "../../store/store";
 import { login, userActions } from "../../store/user.slice";
 
 export type LoginForm = {
@@ -23,7 +23,7 @@ export type LoginForm = {
 
 export function Login() {
    const navigate = useNavigate();
-   const dispatch = useDispatch<AppDispatch>();
+   const dispatch = useDispatch<AppDispath>();
    const { jwt, loginErrorMessage } = useSelector((s: RootState) => s.user);
 
    useEffect(() => {

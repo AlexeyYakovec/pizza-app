@@ -11,11 +11,11 @@ import { BiRuble } from "react-icons/bi";
 
 import { Link } from "react-router-dom";
 import { MouseEvent } from "react";
-import { AppDispatch } from "../../store/store";
+import { AppDispath } from "../../store/store";
 import { cartActions } from "../../store/cart.slice";
 
 function ProductCard(props: ProductCardProps) {
-   const dispatch = useDispatch<AppDispatch>();
+   const dispatch = useDispatch<AppDispath>();
 
    const add = (e: MouseEvent) => {
       e.preventDefault();

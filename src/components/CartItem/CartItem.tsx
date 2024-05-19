@@ -11,20 +11,22 @@ import { IoIosClose } from "react-icons/io";
 import { BiRuble } from "react-icons/bi";
 
 import { MouseEvent } from "react";
-import { AppDispatch } from "../../store/store";
+import { AppDispath } from "../../store/store";
 import { cartActions } from "../../store/cart.slice";
 
 function CartItem(props: CartItemProps) {
-   const dispatch = useDispatch<AppDispatch>();
+   const dispatch = useDispatch<AppDispath>();
+
+   const increase = () => {
+      dispatch(cartActions.add(props.id));
+   };
+
+   const descrease = () => {
+      dispatch(cartActions.remove(props.id));
+   };
 
    const remove = () => {
-      console.log("remove");
-   };
-   const increase = () => {
-      console.log("increase");
-   };
-   const descrease = () => {
-      console.log("descrease");
+      dispatch(cartActions.delete(props.id));
    };
 
    const add = (e: MouseEvent) => {
