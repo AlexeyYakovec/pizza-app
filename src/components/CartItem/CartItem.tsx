@@ -10,7 +10,6 @@ import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import { BiRuble } from "react-icons/bi";
 
-import { MouseEvent } from "react";
 import { AppDispath } from "../../store/store";
 import { cartActions } from "../../store/cart.slice";
 
@@ -27,11 +26,6 @@ function CartItem(props: CartItemProps) {
 
    const remove = () => {
       dispatch(cartActions.delete(props.id));
-   };
-
-   const add = (e: MouseEvent) => {
-      e.preventDefault();
-      dispatch(cartActions.add(props.id));
    };
 
    return (

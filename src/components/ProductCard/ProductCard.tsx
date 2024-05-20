@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 
 import styles from "./ProductCard.module.css";
-// import cn from "classnames";
 
 import { ProductCardProps } from "./ProductCard.props";
 
