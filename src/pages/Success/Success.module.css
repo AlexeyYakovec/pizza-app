@@ -1,0 +1,16 @@
+.success {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 32px;
+}
+
+.text {
+   color: var(--primary-color-hover);
+   text-align: center;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: 300;
+   line-height: 120%;
+}
